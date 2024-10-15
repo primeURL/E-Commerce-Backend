@@ -1,6 +1,5 @@
 import { faker } from "@faker-js/faker";
 import { NextFunction, Request, Response } from "express";
-import { rm } from "fs";
 import { myCache } from "../app.js";
 import { Product } from "../models/Product.js";
 import { Review } from "../models/Review.js";
@@ -152,7 +151,7 @@ export const updateProduct = async(req : Request<{id:string},{},NewProductReques
       
           await deleteFromCloudinary(ids);
       
-          product.photos = photosURL
+        //   product.photos = photosURL
         }
       
         if (name) product.name = name;
