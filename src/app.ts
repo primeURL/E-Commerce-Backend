@@ -49,7 +49,12 @@ app.use(cors({
   methods : ['GET','POST','PUT','DELETE'],      // Methods are allowed
   credentials : true // Means headers are allowed
 }))
-
+app.use((req, res, next) => {
+  // res.header('Access-Control-Allow-Origin', 'http://frontend.com'); // Allow the frontend domain
+  res.header('Access-Control-Allow-Credentials', 'true'); // Allow credentials
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
 app.get("/", (req, res) => {
   res.send("API is working, deployed on Render");

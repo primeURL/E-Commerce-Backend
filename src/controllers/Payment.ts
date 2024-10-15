@@ -82,16 +82,17 @@ export const createPaymentIntent = async (req : Request,res : Response,next : Ne
 
 export const newCoupon = async (req : Request,res : Response,next : NextFunction) => {
     try {
-        const {coupon, amount} = req.body
-
-    if(!coupon || !amount){
+        console.log('here1')
+    const {code, amount} = req.body
+    if(!code || !amount){
         return next(new ErrorHandler("Please enter both coupon and amount",400))
     }
-    await Coupon.create({code : coupon,amount})
-
+    console.log('here')
+    await Coupon.create({code,amount})
+    console.log('there')
     return res.status(201).json({
         success : true,
-        message : `Coupon ${coupon} created successfully`
+        message : `Coupon ${code} created successfully`
     })
     } catch (error) {
         next(error)
@@ -122,10 +123,6 @@ export const applyDiscount = async (req : Request,res : Response,next : NextFunc
 export const allCoupons = async (req : Request,res : Response,next : NextFunction) => {
     try {
         const coupons = await Coupon.find({})
-        // if(!discount){
-        //     return next(new ErrorHandler("Invalid Coupon Code",400))
-        // }
-    
         return res.status(200).json({
             success : true,
             coupons

@@ -14,7 +14,7 @@ router.post("/create", createPaymentIntent);
 router.get("/discount", applyDiscount);
 
 // route - /api/v1/payment/coupon/new
-router.post("/coupon/new", adminOnly,newCoupon);
+router.post("/createnewcoupon", adminOnly,newCoupon);
 
 // route - /api/v1/payment/discount
 router.get("/discount", applyDiscount);

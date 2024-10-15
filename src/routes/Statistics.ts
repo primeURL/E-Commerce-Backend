@@ -9,7 +9,7 @@ const router = express.Router();
 router.get("/stats",adminOnly,getDashboardStats);
 
 // Route - /api/v1/dashboard/pie
-router.get("/pir",adminOnly,getPieCharts);
+router.get("/pie",adminOnly,getPieCharts);
 
 // Route - /api/v1/dashboard/bar
 router.get("/bar",adminOnly,getBarCharts);
