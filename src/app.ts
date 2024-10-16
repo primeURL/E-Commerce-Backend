@@ -45,9 +45,9 @@ export const myCache = new NodeCache()
 app.use(express.json());
 app.use(morgan("dev"))
 app.use(cors({
-  origin : 'https://ecommerce-inky-five.vercel.app/',   // All request origin are allowed
-  methods : ['GET','POST','PUT','DELETE'],      // Methods are allowed
-  credentials : true // Means headers are allowed
+  origin : '*',  // All request origin are allowed
+  methods : ['GET','POST','PUT','DELETE'],   // Methods are allowed
+  // credentials : true // Means headers are allowed
 }))
 app.use((req, res, next) => {
   // res.header('Access-Control-Allow-Origin', 'http://frontend.com'); // Allow the frontend domain
