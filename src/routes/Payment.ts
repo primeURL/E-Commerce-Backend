@@ -10,10 +10,7 @@ const router = express.Router();
 // route - /api/v1/payment/create
 router.post("/create", createPaymentIntent);
 
-// route - /api/v1/payment/coupon/new
-router.get("/discount", applyDiscount);
-
-// route - /api/v1/payment/coupon/new
+// route - /api/v1/payment/createnewcoupon
 router.post("/createnewcoupon", adminOnly,newCoupon);
 
 // route - /api/v1/payment/discount
