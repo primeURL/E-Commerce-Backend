@@ -57,7 +57,11 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("API is working, deployed on Render");
+  res.send("API is working, deployed on Render sdfghjkl");
+});
+
+app.get("/test", (req, res) => {
+  res.send("API is testing");
 });
 
 
